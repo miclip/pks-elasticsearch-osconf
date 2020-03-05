@@ -1,0 +1,16 @@
+---
+addons:
+- include:
+    jobs:
+    - name: kubelet
+      release: kubo
+  jobs:
+  - name: sysctl
+    properties:
+      sysctl:
+      - vm.max_map_count=262144
+    release: os-conf
+  name: sysctl-nodes
+releases:
+- name: os-conf
+  version: 21.0.0+dev.1
